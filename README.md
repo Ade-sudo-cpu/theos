@@ -1,8 +1,8 @@
-# React Native FBSDK
+# theos
 
 React Native FBSDK is a wrapper around the iOS Facebook SDK and Android Facebook SDK, allowing for Facebook integration in [React Native](https://facebook.github.io/react-native/) apps. Access to native components, from login to sharing, is provided entirely through documented JavaScript modules so you don't have to call a single native function directly.
 
-Functionality is provided through one single npm package so you can use it for both platforms without downloading any extra packages. Follow this guide to use react-native-fbsdk in your React Native app. You can also visit https://developers.facebook.com/docs/react-native for tutorials and reference documentation.
+Functionality is provided through one single npm package so you can use it for both platforms without downloading any extra packages. Follow this guide to use theos in your React Native app. You can also visit https://developers.facebook.com/docs/react-native for tutorials and reference documentation.
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -18,13 +18,13 @@ Functionality is provided through one single npm package so you can use it for b
 using either Yarn:
 
 ```
-yarn add react-native-fbsdk
+yarn add theos
 ```
 
 or npm:
 
 ```
-npm install --save react-native-fbsdk
+npm install --save theos
 ```
 
 ### 2. Link
@@ -39,7 +39,7 @@ npm install --save react-native-fbsdk
 
 
 ```bash
-$ react-native link react-native-fbsdk
+$ react-native link theos
 ```
 
 *Note* For `iOS` using `cocoapods`, run:
@@ -56,7 +56,7 @@ If you can't or don't want to use the CLI tool, you can also manually link the l
 Either follow the [instructions in the React Native documentation](https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking) to manually link the framework or link using [Cocoapods](https://cocoapods.org) by adding this to your `Podfile`:
 
 ```ruby
-pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
+pod 'theos', :path => '../node_modules/theos'
 ```
 
 </details>
@@ -68,15 +68,15 @@ Make the following changes:
 
 #### `android/settings.gradle`
 ```groovy
-include ':react-native-fbsdk'
-project(':react-native-fbsdk').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fbsdk/android')
+include ':theos'
+project(':theos').projectDir = new File(rootProject.projectDir, '../node_modules/theos/android')
 ```
 
 #### `android/app/build.gradle`
 ```groovy
 dependencies {
    ...
-   implementation project(':react-native-fbsdk')
+   implementation project(':theos')
 }
 ```
 
@@ -163,7 +163,7 @@ The `AppDelegate.m` file can only have one method for `openUrl`. If you're also 
 ```js
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { LoginButton, AccessToken } from 'react-native-fbsdk';
+import { LoginButton, AccessToken } from 'theos';
 
 export default class Login extends Component {
   render() {
@@ -199,7 +199,7 @@ You can also use the Login Manager with custom UI to perform Login.
 ```js
 // ...
 
-import { LoginManager } from "react-native-fbsdk";
+import { LoginManager } from "theos";
 
 // ...
 
@@ -230,7 +230,7 @@ All of the dialogs included are used in a similar way, with differing content ty
 ```js
 // ...
 
-import { ShareDialog } from 'react-native-fbsdk';
+import { ShareDialog } from 'theos';
 
 // ...
 
@@ -273,7 +273,7 @@ shareLinkWithShareDialog() {
 See [SharePhotoContent](/js/models/FBSharePhotoContent.js) and [SharePhoto](/js/models/FBSharePhoto.js) to refer other options.
 
 ```js
-const FBSDK = require('react-native-fbsdk');
+const FBSDK = require('theos');
 const {
   ShareApi,
 } = FBSDK;
@@ -294,7 +294,7 @@ ShareDialog.show(tmp.state.sharePhotoContent);
 See [ShareVideoContent](/js/models/FBShareVideoContent.js) and [ShareVideo](/js/models/FBShareVideo.js) to refer other options.
 
 ```js
-const FBSDK = require('react-native-fbsdk');
+const FBSDK = require('theos');
 const {
   ShareApi,
 } = FBSDK;
@@ -317,7 +317,7 @@ Your app must have the `publish_actions` permission approved to share through th
 ```js
 // ...
 
-import { ShareApi } from 'react-native-fbsdk';
+import { ShareApi } from 'theos';
 
 // ...
 
@@ -355,7 +355,7 @@ ShareApi.canShare(this.state.shareLinkContent).then(
 ```js
 // ...
 
-import { AppEventsLogger } from "react-native-fbsdk";
+import { AppEventsLogger } from "theos";
 
 // ...
 
@@ -370,7 +370,7 @@ AppEventsLogger.logPurchase(15, "USD", { param: "value" });
 ```js
 // ...
 
-import { GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
+import { GraphRequest, GraphRequestManager } from 'theos';
 
 // ...
 
